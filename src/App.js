@@ -7,7 +7,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <HikeDayCount/>
+        <HikeDayCount
+          total={50}
+          sunny={20}
+          rainy={10}
+          goal={100}
+        />
       </div>
     );
   }
