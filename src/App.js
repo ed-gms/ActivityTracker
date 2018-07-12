@@ -1,17 +1,32 @@
-import React, { Component } from 'react';
-import '../src/stylesheets/main.css';
-import HikeDayCount from './components/HikeDayCount';
-  
+import React, { Component } from "react";
+import "../src/stylesheets/main.css";
+import HikeDayList from "./components/HikeDayList";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <HikeDayCount
-          total={50}
-          sunny={20}
-          rainy={10}
-          goal={100}
+        <HikeDayList
+          days={[
+            {
+              trail: "Baden Powell - Deep Cove To Lynn Canyon",
+              date: new Date("7/14/2018"),
+              sun: true,
+              rain: false
+            },
+            {
+              trail: "Baden Powell - Lynn Canyon To Grouse",
+              date: new Date("7/21/2018"),
+              sun: true,
+              rain: false
+            },
+            {
+              trail: "Big Cedar And Kennedy Falls",
+              date: new Date("7/28/2018"),
+              sun: false,
+              rain: true
+            }
+          ]}
         />
       </div>
     );
