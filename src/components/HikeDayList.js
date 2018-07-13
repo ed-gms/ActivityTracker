@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import HikeDayRow from "./HikeDayRow";
 // import IoIosRainy from "react-icons/lib/io/ios-rainy";
 // import IoIosSunny from "react-icons/lib/io/ios-sunny";
@@ -24,4 +25,17 @@ const HikeDayList = ({ days }) => (
     </tbody>
   </table>
 )
+
+HikeDayList.propTypes = {
+  days: function(props) {
+    if (!Array.isArray(props.days)) {
+      return new Error("HikeDayList should be an array");
+    } else if(!props.days.length) {
+      return new Error("HikeDayList must have at least one record");
+    } else {
+      return null;
+    }
+  }
+};
+
 export default HikeDayList

@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import IoIosRainy from "react-icons/lib/io/ios-rainy";
 import IoIosSunny from "react-icons/lib/io/ios-sunny";
 import Calendar from "react-icons/lib/fa/calendar";
@@ -11,7 +12,7 @@ const calcGoalProgress = (total, goal) => {
   return percentToDecimal(total/goal);
 };
 
-const HikeDayCount = ({total, sunny, rainy, goal}) => (
+const HikeDayCount = ({total=70, sun=20, rain=10, goal=100}) => (
   <div className="hike-day-count">
     <div className="total-days">
       <span>{total}</span>
@@ -19,12 +20,12 @@ const HikeDayCount = ({total, sunny, rainy, goal}) => (
       <span>days</span>
     </div>
     <div className="sunny-days">
-      <span>{sunny}</span>
+      <span>{sun}</span>
       <IoIosSunny/>
       <span>days</span>
     </div>
     <div className="rainy-days">
-      <span>{rainy}</span>
+      <span>{rain}</span>
       <IoIosRainy/>
       <span>days</span>
     </div>
@@ -33,5 +34,12 @@ const HikeDayCount = ({total, sunny, rainy, goal}) => (
     </div>
   </div>
 );
+
+HikeDayCount.propTypes = {
+  total: PropTypes.number,
+  sun: PropTypes.number,
+  rain: PropTypes.number,
+  goal: PropTypes.number
+};
 
 export default HikeDayCount;
