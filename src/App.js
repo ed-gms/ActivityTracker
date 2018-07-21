@@ -4,7 +4,8 @@ import HikeDayList from "./components/HikeDayList";
 import HikeDayCount from "./components/HikeDayCount";
 import AddDayForm from "./components/AddDayForm";
 import Menu from "./components/Menu";
-import { Switch, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import HikeDayRow from "./components/HikeDayRow";
 
 class App extends Component {
   constructor(props) {
@@ -42,10 +43,10 @@ class App extends Component {
     return (
       <div className="App">
         <Menu />
-
         <Switch>
           <Route
-            exact path="/"
+            exact
+            path="/"
             render={() => {
               return (
                 <HikeDayCount
@@ -58,14 +59,15 @@ class App extends Component {
           />
           <Route
             path="/list-days"
-            render={() => {
-              return <HikeDayList days={this.state.allHikeDays} />;
+            render={props => {
+              return <HikeDayList days={this.state.allHikeDays} {...props} />;
             }}
           />
+          <Route path="/list-days/:filter" component={HikeDayRow} />;
           <Route
             path="/add-day"
             render={() => {
-              return <AddDayForm/>;
+              return <AddDayForm />;
             }}
           />
         </Switch>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export class AddDayForm extends Component {
   render() {
@@ -6,8 +6,8 @@ export class AddDayForm extends Component {
       <div>
         <h1>Add a day</h1>
       </div>
-    )
+    );
   }
 }
 
-export default AddDayForm
+export default AddDayForm;

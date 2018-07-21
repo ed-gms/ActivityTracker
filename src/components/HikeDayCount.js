@@ -4,29 +4,29 @@ import IoIosRainy from "react-icons/lib/io/ios-rainy";
 import IoIosSunny from "react-icons/lib/io/ios-sunny";
 import Calendar from "react-icons/lib/fa/calendar";
 
-const percentToDecimal = (decimal) => {
+const percentToDecimal = decimal => {
   return decimal * 100 + "%";
 };
 
 const calcGoalProgress = (total, goal) => {
-  return percentToDecimal(total/goal);
+  return percentToDecimal(total / goal);
 };
 
-const HikeDayCount = ({total=70, sun=20, rain=10, goal=100}) => (
+const HikeDayCount = ({ total = 70, sun = 20, rain = 10, goal = 100 }) => (
   <div className="hike-day-count">
     <div className="total-days">
       <span>{total}</span>
-      <Calendar/>
+      <Calendar />
       <span>days</span>
     </div>
     <div className="sunny-days">
       <span>{sun}</span>
-      <IoIosSunny/>
+      <IoIosSunny />
       <span>days</span>
     </div>
     <div className="rainy-days">
       <span>{rain}</span>
-      <IoIosRainy/>
+      <IoIosRainy />
       <span>days</span>
     </div>
     <div>
